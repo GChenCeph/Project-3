@@ -1,0 +1,112 @@
+------  STATS ------
+File name: sampleBlock1
+Cache Hits: 53377
+Cache Misses: 1
+Disk Reads: 1
+Disk Writes: 1
+Time to sort: 11
+------  STATS ------
+File name: sampleBlock3
+Cache Hits: 189427
+Cache Misses: 3
+Disk Reads: 3
+Disk Writes: 3
+Time to sort: 39
+------  STATS ------
+File name: sampleBlock10
+Cache Hits: 721391
+Cache Misses: 17335
+Disk Reads: 17335
+Disk Writes: 17335
+Time to sort: 567
+------  STATS ------
+File name: sampleBlock50
+Cache Hits: 4299237
+Cache Misses: 109565
+Disk Reads: 109565
+Disk Writes: 109565
+Time to sort: 2242
+------  STATS ------
+File name: sampleBlock1
+Cache Hits: 53377
+Cache Misses: 1
+Disk Reads: 1
+Disk Writes: 1
+Time to sort: 10
+------  STATS ------
+File name: sampleBlock3
+Cache Hits: 189427
+Cache Misses: 3
+Disk Reads: 3
+Disk Writes: 3
+Time to sort: 26
+------  STATS ------
+File name: sampleBlock10
+Cache Hits: 721391
+Cache Misses: 17335
+Disk Reads: 17335
+Disk Writes: 17335
+Time to sort: 339
+------  STATS ------
+File name: sampleBlock50
+Cache Hits: 4299237
+Cache Misses: 109565
+Disk Reads: 109565
+Disk Writes: 109565
+Time to sort: 1729
+------  STATS ------
+File name: sampleBlock1
+Cache Hits: 53377
+Cache Misses: 1
+Disk Reads: 1
+Disk Writes: 1
+Time to sort: 7
+------  STATS ------
+File name: sampleBlock3
+Cache Hits: 189427
+Cache Misses: 3
+Disk Reads: 3
+Disk Writes: 3
+Time to sort: 28
+------  STATS ------
+File name: sampleBlock10
+Cache Hits: 721391
+Cache Misses: 17335
+Disk Reads: 17335
+Disk Writes: 17335
+Time to sort: 361
+------  STATS ------
+File name: sampleBlock50
+Cache Hits: 4299237
+Cache Misses: 109565
+Disk Reads: 109565
+Disk Writes: 109565
+Time to sort: 1729
+------  STATS ------
+File name: sampleBlock1
+Cache Hits: 53377
+Cache Misses: 1
+Disk Reads: 1
+Disk Writes: 1
+Time to sort: 9
+------  STATS ------
+File name: sampleBlock3
+Cache Hits: 189427
+Cache Misses: 3
+Disk Reads: 3
+Disk Writes: 3
+Time to sort: 29
+------  STATS ------
+File name: sampleBlock10
+Cache Hits: 721391
+Cache Misses: 17335
+Disk Reads: 17335
+Disk Writes: 17335
+Time to sort: 351
+------  STATS ------
+File name: sampleBlock50
+Cache Hits: 4299237
+Cache Misses: 109565
+Disk Reads: 109565
+Disk Writes: 109565
+Time to sort: 1739

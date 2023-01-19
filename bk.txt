@@ -1,0 +1,113 @@
+/**
+     * An artificial test to get initial coverage for the
+     * main method. Delete or modify this test.
+     * 
+     * @throws Exception
+     */
+    @Test
+    public void testMain2Buffer2() throws Exception {
+        
+//      Path source = (Path)Paths.get("afterSorting", "sampleBlock3Sorted.bin");
+//      Path target = (Path)Paths.get("sampleBlock3Sorted.bin");
+//      Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+//       
+//      RandomAccessFile inputFile = 
+//          new RandomAccessFile("sampleBlock3Sorted.bin", "rw");
+//      Statistic stat = new Statistic();
+//      BufferPool pool = new BufferPool(inputFile, 1, stat, false);
+//      
+//      assertEquals(7, pool.giveRec(0).getKey());
+//      assertEquals(10261, pool.giveRec(1024).getKey());
+//      assertEquals(20085, pool.giveRec(2048).getKey());
+//      
+//      pool.swap(0, 1024);
+//      
+//      //pool.flush();
+//      
+//      assertEquals(10261, pool.giveRec(0).getKey());
+//      assertEquals(7, pool.giveRec(1024).getKey());
+        
+//      //TestableRandom.setNextInts(1, 11, 2, 22, 3, 33);
+//      //bf.writeRandomRecords();
+        
+//      ByteFile bf = new ByteFile("sampleBlock3Sorted.bin", 3);
+//      bf.seed = 3;
+        
+        //assertEquals(7, pool.giveRec(0).getKey());
+//      assertEquals(10261, pool.giveRec(1024).getKey());
+//      assertEquals(20085, pool.giveRec(2048).getKey());
+        
+//      
+//      assertEquals(7, pool.giveRec(0).getKey());
+//      assertEquals(10261, pool.giveRec(1024).getKey());
+//      assertEquals(20085, pool.giveRec(2048).getKey());
+        
+        
+        
+        
+        
+        
+        Path source = (Path)Paths.get("beforeSorting", "sampleBlock3T1.bin");
+        Path target = (Path)Paths.get("sampleBlock3T1.bin");
+        Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+
+        
+
+        RandomAccessFile inputFile = new RandomAccessFile("sampleBlock3T1.bin", "rw");
+        Statistic stat = new Statistic();
+        BufferPool pool = new BufferPool(inputFile, 1, stat, false);
+
+        
+        int num = (int)inputFile.length();
+        int numberOfRecord = (int)(num / 4);
+        MaxHeap heap = new MaxHeap(numberOfRecord, pool);
+        heap.heapSort();
+        pool.flush();
+        
+        String[] str = new String[3];
+        str[0] = "sampleBlock3T1.bin";
+        str[1] = "1";
+        str[2] = "stat.txt";
+        HeapSort.main(str);
+        ByteFile file = new ByteFile(str[0], Integer.parseInt(str[1]));
+        assertTrue(file.isSorted());
+        
+        RandomAccessFile inputFile2 = new RandomAccessFile("sampleBlock3T1.bin", "rw");
+        inputFile2.seek(2 * 4096 + 4);
+        short key = inputFile2.readShort();
+        inputFile2.seek((2 * 4096) + 6);
+        short value = inputFile2.readShort();
+        System.out.println(key + " " + value);
+        
+        assertEquals("\t    7 22820\t10261  5233\t20085  8765", systemOut().getHistory());
+        systemOut().clearHistory();
+    }
+
+
+    /**
+     * This is swap()
+     * 
+     * @throws IOException
+     */
+    public void swap(int recPos1, int recPos2) throws IOException {
+
+        Record rec1 = giveRec(recPos1);
+        Record temp1 = new Record(0, 0);
+        temp1.setTo(rec1);
+        
+        Record rec2 = giveRec(recPos2);
+        Record temp2 = new Record(0, 0);
+        temp2.setTo(rec2);
+        
+        rec2.setTo(temp1);
+        Buffer buf2 = giveBuffer(recPos2);
+        
+        if (buf2 != null)
+            buf2.setDirty();
+        
+        rec1 = giveRec(recPos1);
+        rec1.setTo(temp2);
+        Buffer buf1 = giveBuffer(recPos1);
+        if (buf1 != null)
+            buf1.setDirty();
+    }
